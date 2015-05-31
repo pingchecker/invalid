@@ -2,17 +2,17 @@
  * slave - Tool to periodically check services availability
  * Copyright (c) 2015, Matej Kormuth <http://www.github.com/dobrakmato>
  * All rights reserved.
- * <p>
+ *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * <p>
+ *
  * 1. Redistributions of source code must retain the above copyright notice, this
  * list of conditions and the following disclaimer.
- * <p>
+ *
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  * this list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
- * <p>
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -58,7 +58,7 @@ public class CheckingService {
     public void register(Target target) {
         log.debug("Registering target {}...", target.getAddress());
         Runnable invokeCheckTask = () -> check(target);
-        scheduler.scheduleAtFixedRate(invokeCheckTask, 10, target.getInterval(), TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(invokeCheckTask, 10, target.getCheckInterval(), TimeUnit.SECONDS);
     }
 
     private void check(Target target) {

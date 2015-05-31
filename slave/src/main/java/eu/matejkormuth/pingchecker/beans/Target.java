@@ -2,17 +2,17 @@
  * slave - Tool to periodically check services availability
  * Copyright (c) 2015, Matej Kormuth <http://www.github.com/dobrakmato>
  * All rights reserved.
- * <p>
+ *
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * <p>
+ *
  * 1. Redistributions of source code must retain the above copyright notice, this
  * list of conditions and the following disclaimer.
- * <p>
+ *
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  * this list of conditions and the following disclaimer in the documentation and/or
  * other materials provided with the distribution.
- * <p>
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -49,7 +49,7 @@ public class Target {
     private Category category;
     @ManyToOne
     private User owner;
-    private int interval;
+    private int checkInterval;
     @OneToMany
     private List<Ping> pings;
 
@@ -93,12 +93,12 @@ public class Target {
         this.owner = owner;
     }
 
-    public int getInterval() {
-        return interval;
+    public int getCheckInterval() {
+        return checkInterval;
     }
 
-    public void setInterval(int interval) {
-        this.interval = interval;
+    public void setCheckInterval(int interval) {
+        this.checkInterval = interval;
     }
 
     public List<Ping> getPings() {
